@@ -9,5 +9,7 @@ namespace Select.TaskTrackingApp.Entities
     public class Priortry : BaseEntity
     {
         public string Defination { get; set; }
+
+        public List<AppTask> AppTasks { get; set; }
     }
 }

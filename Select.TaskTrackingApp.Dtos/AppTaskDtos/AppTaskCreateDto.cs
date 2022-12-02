@@ -1,18 +1,21 @@
-﻿using System;
+﻿using Select.TaskTrackingApp.Dtos.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Select.TaskTrackingApp.Entities
+namespace Select.TaskTrackingApp.Dtos
 {
-    public class Task : BaseEntity
+    public class AppTaskCreateDto : ICreateDto
     {
         public string Title { get; set; }
 
-        public string  Defination { get; set; }
+        public string Defination { get; set; }
 
         public int PriortryId { get; set; }
+
+        public DateTime CreatedTime { get; set; }
 
         public DateTime EndDateTime { get; set; }
     }

@@ -1,0 +1,55 @@
+﻿@using System.Security.Claims
+
+@{
+    Layout = "_Layout";
+    int userId = int.Parse(User.Claims.Where(x => x.Type == ClaimTypes.NameIdentifier).SingleOrDefault().Value);
+}
+<h3 class="text-center">Aktif Görevler</h3>
+
+@await Component.InvokeAsync("TasksComponent",userId)
+
+<table class="table my-3">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Görev Tanımı</th>
+            <th scope="col">Aciliyet</th>
+            <th scope="col">İş Durumu</th>
+            <th scope="col">Oluşturulma Zamanı</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Footer Link</td>
+            <td>Footerda bulunan iconların linkleri düzenlenecek</td>
+            <td>Düşük</td>
+            <td>Devam Ediyor</td>
+            <td>1 saat önce</td>
+            <td><a class="btn btn-primary">Görevi Tamamla</a></td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>User Controller</td>
+            <td>Controller düzenlenecek</td>
+            <td>Çok Acil</td>
+            <td>Devam Ediyor</td>
+            <td>7 saat önce</td>
+            <td><a class="btn btn-primary">Görevi Tamamla</a></td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Navbar </td>
+            <td>Footerda bulunan iconların linkleri düzenlenecek</td>
+            <td>Düşük</td>
+            <td>Tamamlandı</td>
+            <td>16 saat önce</td>
+            <td><a class="btn btn-info">Detayı GÖr</a></td>
+        </tr>
+
+    </tbody>
+</table>

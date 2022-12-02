@@ -8,8 +8,12 @@ namespace Select.TaskTrackingApp.Entities
 {
     public class AppUserRole : BaseEntity
     {
-        public int UserId { get; set; }
+        public int AppUserId { get; set; }
 
-        public int RoleId { get; set; }
+        public AppUser AppUser { get; set; }
+
+        public int AppRoleId { get; set; }
+
+        public AppRole AppRole { get; set; }
     }
 }

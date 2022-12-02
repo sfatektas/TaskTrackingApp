@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "_Layout";
+    var count = 1;
+    string username = String.Empty;
+    foreach (var item in User.Claims)
+    {
+        username = item.Value;
+        break;
+    }
+}
+@model List<AppTaskListDto>
+
+<h3 class="text-center">Aktif Görevler</h3>
+
+<table class="table my-3">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Görev Tanımı</th>
+            <th scope="col">Aciliyet</th>
+            <th scope="col">Oluşturulma Zamanı</th>
+            @if (User.IsInRole("User"))
+            {
+                <th></th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(count++)</td>
+                <td>@item.Title</td>
+                <td>@item.Defination</td>
+                @if (item.PriortryId == (int)PriortryType.Dusuk)
+                {
+                    <td>Düşük</td>
+                }
+                else if (item.PriortryId == (int)PriortryType.Orta)
+                {
+                    <td>Orta</td>
+                }
+                else if (item.PriortryId == (int)PriortryType.Yuksek)
+                {
+                    <td>Yüksek</td>
+                }
+                else
+                {
+                    <td>Çok Yüksek</td>
+                }
+                <td>@item.CreatedTime</td>
+                @if (User.IsInRole("User"))
+                {
+                    <td><a id="TakeTaskBtn" asp-action="AcceptTask" asp-controller="User" asp-route-taskId="@item.Id" asp-route-userName="@username"class="btn btn-primary btn-sm d-none ">Görev Al</a></td>
+                    <td><button id="FakeBtn" onclick="tıkla()" class="btn btn-primary btn-sm ">Görev Al</button></td>
+                }
+                else if (!User.IsInRole("Admin"))
+                {
+                    <td><a asp-action="TakeTask" asp-controller="User" asp-route-taskId="@item.Id">Görevi almak için giriş yap.</a></td>
+                }
+            </tr>
+        }
+
+    </tbody>
+</table>
+@section Scripts
+{
+    <script>
+        var btn = document.getElementById("TakeTaskBtn");
+        const tıkla = () => {
+            if (confirm("Emin misiniz ?")) {
+                console.log(true);
+                btn.click();
+            }
+        }
+    </script>
+}

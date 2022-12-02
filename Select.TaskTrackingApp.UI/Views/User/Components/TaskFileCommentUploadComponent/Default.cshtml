@@ -1,0 +1,27 @@
+﻿@model AppUserTaskUpdateModel
+@{
+}
+
+<form asp-action="ComplateTask" asp-controller="User" method="post" enctype="multipart/form-data">
+    <input class="d-none" asp-for="@Model.AppTaskId"/>
+    <input id="defination" class="d-none" asp-for="@Model.ComplateDocumentDefination"/>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="comment">Complate Defination:<sup>*</sup></label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label class="form-label" for="customFile">Choose File:</label>
+            <input type="file" asp-for="@Model.TaskComplateFile" class="form-control" id="customFile" />
+        </div>
+    </div>
+    <div class="row d-flex align-items-center">
+        <button id="btn" class="btn btn-success">Submit</button>
+
+        <button it="submitBtn" class="d-none" type="submit"></button>
+    </div>
+</form>

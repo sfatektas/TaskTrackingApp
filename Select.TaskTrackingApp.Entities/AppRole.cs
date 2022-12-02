@@ -10,5 +10,6 @@ namespace Select.TaskTrackingApp.Entities
     {
         public string Defination { get; set; }
 
+        public List<AppUserRole> AppUserRoles { get; set; }
     }
 }
