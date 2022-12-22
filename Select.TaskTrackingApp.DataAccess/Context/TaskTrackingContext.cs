@@ -44,5 +44,10 @@ namespace Select.TaskTrackingApp.DataAccess.Context
             modelBuilder.ApplyConfiguration(new DegreeConfiguration());
             modelBuilder.ApplyConfiguration(new PriortryConfiguration());
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.LogTo(Console.WriteLine,minimumLevel: Microsoft.Extensions.Logging.LogLevel.Information);
+            base.OnConfiguring(optionsBuilder);
+        }
     }
 }

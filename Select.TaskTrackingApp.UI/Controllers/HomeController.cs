@@ -14,20 +14,18 @@ namespace Select.TaskTrackingApp.UI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IAppUserService _appUserService;
         private readonly IAppTaskService _appTaskService;
 
         public HomeController(IAppUserService appUserService, IAppTaskService appTaskService)
         {
-            _appUserService = appUserService;
             _appTaskService = appTaskService;
         }
 
         public async Task<IActionResult> Index()
         {
-            var response = await _appTaskService.GetAllAsync();
+            var response = await _appTaskService.GetIncluded();
             
-            return View(response.Data);
+            return View(response.Data.Where(x => x.IsActive==true).ToList());
         }
 
         public IActionResult Privacy()

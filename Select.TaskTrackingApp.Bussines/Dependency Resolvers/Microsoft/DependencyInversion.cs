@@ -26,23 +26,20 @@ namespace Select.TaskTrackingApp.Bussines.Dependency_Resolvers.Microsoft
 {
     public static class DependencyInversion
     {
-        public static void DependencyExtension(this IServiceCollection services)
+        public static List<Profile> DependencyExtension(this IServiceCollection services)
         {
             services.AddDbContext<TaskTrackingContext>(
        options => options.UseSqlServer("server=(localdb)\\mssqllocaldb; database=TaskTrackingDb; integrated security=true;"));
 
             services.AddScoped<IUow, Uow>();
-            var config = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile(new AppUserProfile());
-                cfg.AddProfile(new AppTaskProfile());
-                cfg.AddProfile(new AppUserRoleProfile());
-                cfg.AddProfile(new AppRoleProfile());
-                cfg.AddProfile(new AppUserTaskProfile());
-            }
-            );
-            var mapper = config.CreateMapper();
-            services.AddSingleton(mapper);
+            var profiles = new List<Profile>() {
+                new AppUserProfile(),
+                new AppRoleProfile(),
+                new AppTaskProfile(),
+                new AppUserRoleProfile(),
+                new AppUserTaskProfile()
+            };
+
 
             services.AddScoped<IValidator<AppUserCreateDto>, AppUserCreateValidator>();
             services.AddScoped<IValidator<AppUserTaskCreateDto>, AppUserTaskCreateDtoValidator>();
@@ -55,6 +52,7 @@ namespace Select.TaskTrackingApp.Bussines.Dependency_Resolvers.Microsoft
             services.AddScoped<IAppUserRoleService, AppUserRoleService>();
             services.AddScoped<IAppUserTaskService, AppUserTaskService>();
 
+            return profiles;
         }
     }
 }

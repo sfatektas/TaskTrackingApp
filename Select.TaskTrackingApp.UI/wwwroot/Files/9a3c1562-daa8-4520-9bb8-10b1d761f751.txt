@@ -1,0 +1,29 @@
+-cmp yerine diff komutu kullanılacak imiş.
+
+tr -t a-d 12 < meyve3
+
+--tr komutu ile örnek yaptı.
+
+tr a-zA-Z d-za0-ZA-C < meyve3
+
+tr d-za0-ZA-C a-zA-Z < meyve3_tran > meyve3_org geçen sene sınavda sormuş
+
+.. o dersin devamı alınacak.
+
+
+10.11.2022
+
+Egrep genel olarak kullanılıyor.
+
+-Regular expression konusuna değinildi -- Using egrep 
+--metacharacters
+
+ls -al | egrep "^d"
+
+ls -la \ egrep "\.txt$"
+
+ls -al | egrep "^-.*\.ldf"
+
+egrep "[^abc]" => a,b,c ile başlamayan değerleri alır.
+
+egrep "[aeiou]{2,}"//aeiou ile başlayıp en az 2 şekilde tekrar eden ve sınırsız sayıda bulunan değerleri alır.

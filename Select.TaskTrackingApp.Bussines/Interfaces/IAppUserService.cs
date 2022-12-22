@@ -1,6 +1,7 @@
 ﻿using Select.TaskTrackingApp.Common.Interfaces;
 using Select.TaskTrackingApp.Dtos;
 using Select.TaskTrackingApp.Dtos.AppRoleDtos;
+using Select.TaskTrackingApp.Dtos.PriortryDtos;
 using Select.TaskTrackingApp.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Select.TaskTrackingApp.Bussines.Interfaces
 {
-    public interface IAppUserService : IService<AppUserCreateDto,AppUserUpdateDto,AppUserListDto,AppUser>
+    public interface IAppUserService : IService<AppUserCreateDto,AppUserUpdateDto,AppUserListDto,AppUser>, IIncludeable<AppUserListDto>
     {
         Task<IResponse<AppUserListDto>> GetByFilterUser(Expression<Func<AppUser, bool>> filter);
         Task<IResponse<List<AppRoleListDto>>> GetRolesByUserIdAsync(int userId);

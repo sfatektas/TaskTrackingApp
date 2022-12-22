@@ -6,16 +6,16 @@ namespace Select.TaskTrackingApp.UI.ViewComponents
 {
     public class TasksComponent : ViewComponent
     {
-        readonly IAppUserTaskService _appUserTaskService;
+        readonly IAppTaskService _appTaskService;
 
-        public TasksComponent(IAppUserTaskService appUserTaskService)
+        public TasksComponent(IAppTaskService appTaskService)
         {
-            _appUserTaskService = appUserTaskService;
+            _appTaskService = appTaskService;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int id)
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            var response = await _appUserTaskService.GetTasksWithUserId(id);
+            var response = await _appTaskService.GetAllAsync(x=>x.IsActive==true);
             if (response.ResponseType == Common.Enums.ResponseType.Success)
             {
                 return View(response.Data);

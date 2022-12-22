@@ -1,8 +1,15 @@
-﻿
+﻿@model List<AppUserTaskListDto>
 @{
     Layout = "_Layout";
+    int counter = 0;
 }
+
+<p>@ViewBag.Message</p>
+
+@await Component.InvokeAsync("TasksComponent")
+
 <h3 class="text-center">Görev Durumları</h3>
+
 
 <table class="table my-3">
     <thead>
@@ -18,38 +25,28 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>sfatketas</td>
-            <td>Footer Link</td>
-            <td>Footerda bulunan iconların linkleri düzenlenecek</td>
-            <td>Düşük</td>
-            <td>Devam Ediyor</td>
-            <td>1 saat önce</td>
-            <td><a class="btn btn-warning">Devam Ediyor</a></td>
-        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(++counter)</td>
+                <td>@item.AppUser.Username</td>
+                <td>@item.AppTask.Title</td>
+                <td>@item.AppTask.Defination</td>
+                <td>@item.AppTask.Priortry.Defination</td>
+                <td>@item.TaskStatus.Defination</td>
+                <td>@item.AppTask.CreatedTime.ToString("MM/dd/yyyy HH:mm")</td>
+                @{
+                    if (item.TaskStatus.Id == (int)TaskStatusType.GorevAlındı)
+                    {
+                            <td><a class="btn text-white btn-warning">Devam Ediyor</a></td>
 
-        <tr>
-            <td>2</td>
-            <td>sfatketas</td>
-            <td>User Controller</td>
-            <td>Controller düzenlenecek</td>
-            <td>Çok Acil</td>
-            <td>Devam Ediyor</td>
-            <td>7 saat önce</td>
-            <td><a class="btn btn-warning">Devam Ediyor</a></td>
-        </tr>
-
-        <tr>
-            <td>3</td>
-            <td>sfatketas</td>
-            <td>Navbar </td>
-            <td>Footerda bulunan iconların linkleri düzenlenecek</td>
-            <td>Düşük</td>
-            <td>Tamamlandı</td>
-            <td>16 saat önce</td>
-            <td><a class="btn btn-info">Görevin Detaylarını Gör.</a></td>
-        </tr>
-
+                    }
+                    else if (item.TaskStatus.Id == (int)TaskStatusType.Tamamlandı)
+                    {
+                            <td><a asp-action="TaskDetail" asp-controller="Admin" asp-route-id=@item.Id class="btn text-white btn-primary">Detay Gör</a></td>
+                    }
+                }
+            </tr>
+        }
     </tbody>
 </table>

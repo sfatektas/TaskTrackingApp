@@ -1,41 +1,32 @@
-﻿
+﻿@model List<AppUserListDto>
 @{
     Layout = "_Layout";
 }
-
-<h4 class="text-center">Kullanıcı Ekle</h4>
-<div class="container">
-    <form method="post" class="mt-2">
-        <!-- Email input -->
-        <div class="form-outline mb-4">
-            <input type="text" class="form-control" />
-            <label class="form-label">Çalışan Adı</label>
-        </div>
-
-        <div class="form-outline mb-4">
-            <input type="text" class="form-control" />
-            <label class="form-label">Çalışan Soyadı</label>
-        </div>
-
-        <div class="form-outline mb-4">
-            <input type="text" class="form-control" />
-            <label class="form-label">Çalışan Kullanıcı Adı</label>
-        </div>
-
-        <div class="form-outline mb-4">
-            <input type="text" class="form-control" />
-            <label class="form-label">Çalışan Email</label>
-        </div>
-
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option value="1">Juniour Frontend Developer</option>
-            <option value="1">Middle Frontend Developer</option>
-            <option value="1">Senior Frontend Developer</option>
-            <option value="1">.Net Backend Developer</option>
-        </select>
-        <!-- Submit button -->
-        <button type="submit" class="btn btn-primary btn-block mb-4">Ekle</button>
-
-    </form>
-</div>
+<a asp-action="CreateUser" asp-controller="Admin" class="btn btn-sm btn-success float-right">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ad</th>
+            <th scope="col">Soyad</th>
+            <th scope="col">Kullanıcı Adı</th>
+            <th scope="col">Degree</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>#</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Username</td>
+                <td>@item.DegreeId</td>
+                <td>@item.Email</td>
+                <td><a class="btn btn-sm btn-danger">Remove</a></td>
+                <td><a class="btn btn-sm btn-primary">Update</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

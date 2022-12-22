@@ -47,6 +47,17 @@ namespace Select.TaskTrackingApp.Bussines.Services
             await _uow.SaveChangesAsync();
             return new Response(ResponseType.Success);
         }
+
+        public async Task<IResponse<AppUserTaskListDto>> GetIncluded(int id)
+        {
+            return new Response<AppUserTaskListDto>(ResponseType.Success, _mapper.Map<AppUserTaskListDto>(await _uow.GetRepository<AppUserTask>().GetQueryable(id).Include(x => x.AppTask).ThenInclude(x => x.Priortry).Include(x => x.AppUser).Include(x => x.TaskStatus).SingleOrDefaultAsync()));
+        }
+
+        public async Task<IResponse<List<AppUserTaskListDto>>> GetIncluded()
+        {
+            return new Response<List<AppUserTaskListDto>>(ResponseType.Success, _mapper.Map<List<AppUserTaskListDto>>(await _uow.GetRepository<AppUserTask>().GetQueryable().Include(x => x.AppTask).ThenInclude(x=>x.Priortry).Include(x=>x.AppUser).Include(x=>x.TaskStatus).ToListAsync()));
+        }
+
         public async Task<IResponse<List<AppUserTaskListDto>>> GetTasksWithUserId(int id)
         {
             //var data = await _uow.GetRepository<AppUserTask>().GetAllAsync(x => x.AppUserId == id);

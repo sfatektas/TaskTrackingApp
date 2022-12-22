@@ -18,5 +18,7 @@ namespace Select.TaskTrackingApp.Dtos
         public DateTime CreatedTime { get; set; }
 
         public DateTime EndDateTime { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

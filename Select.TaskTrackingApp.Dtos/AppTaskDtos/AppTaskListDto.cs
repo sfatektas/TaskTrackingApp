@@ -18,6 +18,8 @@ namespace Select.TaskTrackingApp.Dtos
 
         public int PriortryId { get; set; }
 
+        public bool IsActive { get; set; }
+
         public PriortryListDto Priortry { get; set; }
 
         public DateTime CreatedTime { get; set; }

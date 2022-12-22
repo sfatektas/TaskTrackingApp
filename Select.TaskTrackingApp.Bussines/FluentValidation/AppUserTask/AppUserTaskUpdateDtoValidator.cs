@@ -15,7 +15,7 @@ namespace Select.TaskTrackingApp.Bussines.FluentValidation.AppUserTask
             RuleFor(x => x.AppUserId).NotNull();
             RuleFor(x => x.AppTaskId).NotNull();
             RuleFor(x => x.TaskStatusId).NotNull();
-            RuleFor(x => x.ComplateDocumentDefination).NotNull();
+            RuleFor(x => x.CompleteDocumentDefination).NotNull();
         }
     }
 }

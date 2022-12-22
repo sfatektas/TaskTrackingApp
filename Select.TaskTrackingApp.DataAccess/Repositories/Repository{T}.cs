@@ -56,11 +56,16 @@ namespace Select.TaskTrackingApp.DataAccess.Repositories
 
         public void Update(T unchanged, T updated)
         {
-             _context.Entry(unchanged).CurrentValues.SetValues(updated);
+            _context.Update(updated);
+             //_context.Entry(unchanged).CurrentValues.SetValues(updated);
         }
         public IQueryable<T> GetQueryable()
         { 
             return _context.Set<T>().AsQueryable();
+        }
+        public IQueryable<T> GetQueryable(int id)
+        {
+            return _context.Set<T>().AsQueryable().Where(x=>x.Id ==id);
         }
     }
 }

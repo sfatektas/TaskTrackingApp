@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 using Select.TaskTrackingApp.Bussines.Interfaces;
 using Select.TaskTrackingApp.Common;
 using Select.TaskTrackingApp.Common.Enums;
@@ -9,6 +10,7 @@ using Select.TaskTrackingApp.DataAccess.Interfaces;
 using Select.TaskTrackingApp.DataAccess.Repositories;
 using Select.TaskTrackingApp.Dtos;
 using Select.TaskTrackingApp.Dtos.AppRoleDtos;
+using Select.TaskTrackingApp.Dtos.PriortryDtos;
 using Select.TaskTrackingApp.Entities;
 using System;
 using System.Collections.Generic;
@@ -19,7 +21,7 @@ using System.Threading.Tasks;
 
 namespace Select.TaskTrackingApp.Bussines.Services
 {
-    public class AppUserService : Service<AppUserCreateDto,AppUserUpdateDto,AppUserListDto,AppUser> ,IAppUserService
+    public class AppUserService : Service<AppUserCreateDto,AppUserUpdateDto,AppUserListDto,AppUser> ,IAppUserService 
     {
         private readonly IUow _uow;
         private readonly IMapper _mapper;
@@ -38,6 +40,18 @@ namespace Select.TaskTrackingApp.Bussines.Services
             }
             return new Response<AppUserListDto>(ResponseType.NotFound, "Kullanıcı bulunamadı", new AppUserListDto());
         }
+
+        public async Task<IResponse<List<AppUserListDto>>> GetIncluded()
+        {
+            var data = await _uow.GetRepository<AppUser>().GetQueryable().Include(x => x.AppUserRoles).ToListAsync();
+            return new Response<List<AppUserListDto>>(ResponseType.Success,_mapper.Map<List<AppUserListDto>>(data));
+        }
+
+        public Task<IResponse<AppUserListDto>> GetIncluded(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IResponse<List<AppRoleListDto>>> GetRolesByUserIdAsync(int userId)
         {
             //AppUserRoles tablosundaki userId ye eşit olan rolleri çekiyoruz.
@@ -47,5 +61,6 @@ namespace Select.TaskTrackingApp.Bussines.Services
             var mappedData = _mapper.Map<List<AppRoleListDto>>(roles);
             return new Response<List<AppRoleListDto>>(ResponseType.Success, mappedData);
         }
+
     }
 }

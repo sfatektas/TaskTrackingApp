@@ -21,5 +21,7 @@ namespace Select.TaskTrackingApp.Entities
         public DateTime EndDateTime { get; set; }
 
         public AppUserTask AppUserTask { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

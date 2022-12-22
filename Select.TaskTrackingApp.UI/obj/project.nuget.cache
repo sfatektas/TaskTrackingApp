@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "msCOmIUjONtdbXD84XelWg9vMd2/ZhtE9fiXzb2AhvBqBndqi9r0iZIQVanrH2zYheIN4EcMC8XxXfgc0xSsNw==",
+  "dgSpecHash": "AdzDtCnuELQLXZ0cSrVmkIukT7u4ddLQBVthx9yp0dH9UWjtX+YdTAUfGPBPQQs8/tHYKjsFPGaLzD6g6VtGcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.UI\\Select.TaskTrackingApp.UI.csproj",
+  "projectFilePath": "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.UI\\Select.TaskTrackingApp.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SEFA$$\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\SEFA$$\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

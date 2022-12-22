@@ -18,6 +18,7 @@ namespace Select.TaskTrackingApp.DataAccess.Configurations
             builder.Property(x => x.EndDateTime).IsRequired();
             builder.Property(x => x.PriortryId).IsRequired();
             builder.Property(x => x.CreatedTime).HasDefaultValueSql("getdate()");
+            builder.Property(x => x.IsActive).IsRequired();
 
             builder.HasOne(x => x.Priortry).WithMany(x => x.AppTasks).HasForeignKey(x => x.PriortryId);
         }

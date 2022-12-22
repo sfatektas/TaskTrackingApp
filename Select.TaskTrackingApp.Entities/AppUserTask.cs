@@ -24,9 +24,9 @@ namespace Select.TaskTrackingApp.Entities
 
         //Complated
 
-        public DateTime? CompletedTaskDate { get; set; } = null;
+        public DateTime? CompletedTaskDate { get; set; } 
 
-        public string CompleteDocument { get; set; } = String.Empty;
+        public string CompleteDocumentDefination { get; set; } 
 
         public string DocumentPath { get; set; } = String.Empty;
     }

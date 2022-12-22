@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Select.TaskTrackingApp.Dtos.Interfaces
 {
-    public interface ICreateDto
+    public interface ICreateDto : IDto
     {
     }
 }

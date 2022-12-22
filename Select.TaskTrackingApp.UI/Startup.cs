@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Select.TaskTrackingApp.Bussines.Dependency_Resolvers.Microsoft;
+using Select.TaskTrackingApp.Dtos;
+using Select.TaskTrackingApp.UI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +29,9 @@ namespace Select.TaskTrackingApp.UI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews().AddNewtonsoftJson(setup => setup.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-            services.DependencyExtension();
+            
+            var profiles = services.DependencyExtension();// dependency Inversion dönüþtipi profil dizisi olarak ayarlý
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie(opt =>
             {
@@ -36,6 +41,17 @@ namespace Select.TaskTrackingApp.UI
                 opt.ExpireTimeSpan = TimeSpan.FromDays(1);
                 opt.Cookie.SameSite = SameSiteMode.Strict;
             });
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfiles(profiles);
+                cfg.CreateMap<AppTaskCreateDto, AppTaskCreateModel>().ReverseMap();
+                cfg.CreateMap<AppTaskListDto, AppTaskUpdateModel>().ReverseMap();
+                cfg.CreateMap<AppTaskUpdateDto, AppTaskUpdateModel>().ReverseMap();
+            }
+);
+            var mapper = config.CreateMapper();
+            services.AddSingleton(mapper);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

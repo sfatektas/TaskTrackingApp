@@ -1,0 +1,26 @@
+Pazartesi : 12:00-13.30 İleri Sistem Programlama
+Salı: Boş
+Çarşamba:  09:00 -10:30 Ağ Güvenliğine Giriş
+Çarşamba:  14:30 - 15.30 Bilgisayar Aritemetiği ve Otomata
+Perşembe : Boş
+Cuma: 13.30-14.30 Veri tabanı tasaırm
+Cuma: 15:30 -17:00 Makine Öğrenmesi (notlar+hesap makinesi);
+
+
+
+a grubu  b grubu 
+
+
+
+a b'ye 1 tane verince b a'nın 2 katı oluyor.
+
+b a' ya 1 tane verince eşit oluyorlar.
+
+2(a-1) = b+1
+a+1 = b-1
+
+a+2 = b         
+2a-3 = b
+
+
+a=5   b=7

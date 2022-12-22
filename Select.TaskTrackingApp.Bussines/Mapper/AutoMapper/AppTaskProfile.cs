@@ -15,6 +15,7 @@ namespace Select.TaskTrackingApp.Bussines.Mapper.AutoMapper
         public AppTaskProfile()
         {
             CreateMap<AppTask, AppTaskListDto>().ReverseMap();
+            CreateMap<AppTaskUpdateDto, AppTaskListDto>().ReverseMap();
             CreateMap<AppTask, AppTaskUpdateDto>().ReverseMap();
             CreateMap<AppTask, AppTaskCreateDto>().ReverseMap();
             //AppTaskStatus

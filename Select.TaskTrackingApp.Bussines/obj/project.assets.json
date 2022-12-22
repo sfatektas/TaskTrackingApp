@@ -6201,11 +6201,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.Bussines\\Select.TaskTrackingApp.Bussines.csproj",
+      "projectUniqueName": "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.Bussines\\Select.TaskTrackingApp.Bussines.csproj",
       "projectName": "Select.TaskTrackingApp.Bussines",
-      "projectPath": "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.Bussines\\Select.TaskTrackingApp.Bussines.csproj",
+      "projectPath": "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.Bussines\\Select.TaskTrackingApp.Bussines.csproj",
       "packagesPath": "C:\\Users\\SEFA$$\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.Bussines\\obj\\",
+      "outputPath": "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.Bussines\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6226,14 +6226,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.Common\\Select.TaskTrackingApp.Common.csproj": {
-              "projectPath": "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.Common\\Select.TaskTrackingApp.Common.csproj"
+            "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.Common\\Select.TaskTrackingApp.Common.csproj": {
+              "projectPath": "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.Common\\Select.TaskTrackingApp.Common.csproj"
             },
-            "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.DataAccess\\Select.TaskTrackingApp.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.DataAccess\\Select.TaskTrackingApp.DataAccess.csproj"
+            "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.DataAccess\\Select.TaskTrackingApp.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.DataAccess\\Select.TaskTrackingApp.DataAccess.csproj"
             },
-            "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.Dtos\\Select.TaskTrackingApp.Dtos.csproj": {
-              "projectPath": "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.Dtos\\Select.TaskTrackingApp.Dtos.csproj"
+            "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.Dtos\\Select.TaskTrackingApp.Dtos.csproj": {
+              "projectPath": "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.Dtos\\Select.TaskTrackingApp.Dtos.csproj"
             }
           }
         }

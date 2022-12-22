@@ -1,4 +1,6 @@
-﻿using Select.TaskTrackingApp.Dtos.Interfaces;
+﻿using Select.TaskTrackingApp.Dtos.AppUserRoleDtos;
+using Select.TaskTrackingApp.Dtos.DegreeDtos;
+using Select.TaskTrackingApp.Dtos.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +19,14 @@ namespace Select.TaskTrackingApp.Dtos
 
         public string Username { get; set; }
 
-
         public string Email { get; set; }
 
         public int DegreeId { get; set; } //Ünvan
 
+        public DegreeListDto Degree { get; set; }
+
         public string Password { get; set; }
+
+        public List<AppUserRoleListDto> AppUserRoles { get; set; }
     }
 }

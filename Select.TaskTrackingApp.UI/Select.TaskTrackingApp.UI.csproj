@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Select.TaskTrackingApp.Bussines\Select.TaskTrackingApp.Bussines.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Files\" />
+  </ItemGroup>
+
 </Project>

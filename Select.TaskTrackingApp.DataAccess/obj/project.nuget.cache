@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mD2A0Yf4ZWy3pW1m9Eeqp6Fs95ydjHj98VIxiasJbrw50U0Zm7duSCzmcZt8jwHumlnvsW/oBBxaj2ez1U8Heg==",
+  "dgSpecHash": "dwprNSBGGs7qRrVy9JHJlXSbiTN+epERTqPnji0n13q5pCQ803tRSbcGNvTXjHK+B7HzhuKNNN9LIBgtDT3cfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.DataAccess\\Select.TaskTrackingApp.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.DataAccess\\Select.TaskTrackingApp.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SEFA$$\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\SEFA$$\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

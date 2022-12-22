@@ -28,7 +28,7 @@ namespace Select.TaskTrackingApp.Dtos.AppUserTaskDtos
 
         public DateTime? CompletedTaskDate { get; set; }
 
-        public string ComplateDocumentDefination { get; set; }
+        public string CompleteDocumentDefination { get; set; }
 
         public string DocumentPath { get; set; }
     }

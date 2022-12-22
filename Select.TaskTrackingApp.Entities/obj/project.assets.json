@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.Entities\\Select.TaskTrackingApp.Entities.csproj",
+      "projectUniqueName": "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.Entities\\Select.TaskTrackingApp.Entities.csproj",
       "projectName": "Select.TaskTrackingApp.Entities",
-      "projectPath": "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.Entities\\Select.TaskTrackingApp.Entities.csproj",
+      "projectPath": "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.Entities\\Select.TaskTrackingApp.Entities.csproj",
       "packagesPath": "C:\\Users\\SEFA$$\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SEFA$$\\Desktop\\KODLAMA\\TaskTrackingApp\\Select.TaskTrackingApp.Entities\\obj\\",
+      "outputPath": "C:\\Users\\SEFA$$\\Desktop\\TaskTracking\\TaskTrackingApp\\Select.TaskTrackingApp.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

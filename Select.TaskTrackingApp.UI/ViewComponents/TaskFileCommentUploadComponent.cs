@@ -6,9 +6,9 @@ namespace Select.TaskTrackingApp.UI.ViewComponents
 {
     public class TaskFileCommentUploadComponent : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(int id)
         {
-            return View(new AppUserTaskUpdateModel());
+            return View(new AppUserTaskUpdateModel() { AppUserTaskId = id});
         }
     }
 }

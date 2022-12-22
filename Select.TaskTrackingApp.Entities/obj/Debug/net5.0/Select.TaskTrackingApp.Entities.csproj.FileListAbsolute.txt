@@ -22,3 +22,15 @@ C:\Users\SEFA$$\Desktop\KODLAMA\TaskTrackingApp\Select.TaskTrackingApp.Entities\
 C:\Users\SEFA$$\Desktop\KODLAMA\TaskTrackingApp\Select.TaskTrackingApp.Entities\obj\Debug\net5.0\refint\Select.TaskTrackingApp.Entities.dll
 C:\Users\SEFA$$\Desktop\KODLAMA\TaskTrackingApp\Select.TaskTrackingApp.Entities\obj\Debug\net5.0\Select.TaskTrackingApp.Entities.pdb
 C:\Users\SEFA$$\Desktop\KODLAMA\TaskTrackingApp\Select.TaskTrackingApp.Entities\obj\Debug\net5.0\ref\Select.TaskTrackingApp.Entities.dll
+C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.Entities\bin\Debug\net5.0\Select.TaskTrackingApp.Entities.deps.json
+C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.Entities\bin\Debug\net5.0\Select.TaskTrackingApp.Entities.dll
+C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.Entities\bin\Debug\net5.0\Select.TaskTrackingApp.Entities.pdb
+C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.Entities\obj\Debug\net5.0\Select.TaskTrackingApp.Entities.csproj.AssemblyReference.cache
+C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.Entities\obj\Debug\net5.0\Select.TaskTrackingApp.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.Entities\obj\Debug\net5.0\Select.TaskTrackingApp.Entities.AssemblyInfoInputs.cache
+C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.Entities\obj\Debug\net5.0\Select.TaskTrackingApp.Entities.AssemblyInfo.cs
+C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.Entities\obj\Debug\net5.0\Select.TaskTrackingApp.Entities.csproj.CoreCompileInputs.cache
+C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.Entities\obj\Debug\net5.0\Select.TaskTrackingApp.Entities.dll
+C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.Entities\obj\Debug\net5.0\refint\Select.TaskTrackingApp.Entities.dll
+C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.Entities\obj\Debug\net5.0\Select.TaskTrackingApp.Entities.pdb
+C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.Entities\obj\Debug\net5.0\ref\Select.TaskTrackingApp.Entities.dll

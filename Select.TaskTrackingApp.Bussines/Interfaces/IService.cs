@@ -1,9 +1,11 @@
 ﻿using Select.TaskTrackingApp.Common.Interfaces;
+using Select.TaskTrackingApp.Dtos.AppUserTaskDtos;
 using Select.TaskTrackingApp.Dtos.Interfaces;
 using Select.TaskTrackingApp.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +22,8 @@ namespace Select.TaskTrackingApp.Bussines.Interfaces
 
         Task<IResponse<List<ListDto>>> GetAllAsync();
 
+        Task<IResponse<List<ListDto>>> GetAllAsync(Expression<Func<T, bool>> filter);
+
         Task<IResponse<ListDto>> GetByIdAsync(int id);
 
         //Task<IResponse<ListDto>> GetByIdAsync<Dto>(int id) where Dto : ListDto;
@@ -27,6 +31,7 @@ namespace Select.TaskTrackingApp.Bussines.Interfaces
         Task<IResponse> Remove(ListDto dto);
 
         Task<IResponse<UpdateDto>> UpdateAsync(UpdateDto dto);
+
 
     }
 }

@@ -20,9 +20,9 @@ namespace Select.TaskTrackingApp.DataAccess.Configurations
             builder.Property(x => x.TaskEndDate).IsRequired();
             builder.HasOne(x => x.AppTask).WithOne(x => x.AppUserTask);
             builder.HasOne(x => x.TaskStatus).WithMany(x => x.AppUserTasks).HasForeignKey(x => x.TaskStatusId);
-            builder.Property(x => x.CompleteDocument).IsRequired(false);
+            builder.Property(x => x.CompleteDocumentDefination).IsRequired(false);
             builder.Property(x => x.DocumentPath).IsRequired(false);
-            //builder.Property(x => x.CompletedTaskDate).HasDefaultValue("01/01/1000");
+            builder.Property(x => x.CompletedTaskDate).HasColumnType("smalldatetime");
         }
     }
 }

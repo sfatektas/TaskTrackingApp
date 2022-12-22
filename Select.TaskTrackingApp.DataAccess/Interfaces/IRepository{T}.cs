@@ -25,5 +25,7 @@ namespace Select.TaskTrackingApp.DataAccess.Interfaces
         void Update(T unchanged, T updated);
 
         IQueryable<T> GetQueryable();
+
+        IQueryable<T> GetQueryable(int id);
     }
 }

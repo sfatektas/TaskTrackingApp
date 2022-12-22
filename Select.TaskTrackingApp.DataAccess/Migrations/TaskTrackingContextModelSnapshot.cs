@@ -56,6 +56,9 @@ namespace Select.TaskTrackingApp.DataAccess.Migrations
                     b.Property<DateTime>("EndDateTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<int>("PriortryId")
                         .HasColumnType("int");
 
@@ -165,11 +168,11 @@ namespace Select.TaskTrackingApp.DataAccess.Migrations
                     b.Property<int>("AppUserId")
                         .HasColumnType("int");
 
-                    b.Property<string>("CompleteDocument")
+                    b.Property<string>("CompleteDocumentDefination")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("CompletedTaskDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("smalldatetime");
 
                     b.Property<string>("DocumentPath")
                         .HasColumnType("nvarchar(max)");

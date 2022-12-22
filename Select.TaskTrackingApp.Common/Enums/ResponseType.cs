@@ -10,6 +10,7 @@ namespace Select.TaskTrackingApp.Common.Enums
     {
         Success,
         ValidationError,
-        NotFound
+        NotFound,
+        Error
     }
 }
