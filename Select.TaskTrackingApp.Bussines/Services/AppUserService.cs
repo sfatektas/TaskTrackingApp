@@ -10,6 +10,7 @@ using Select.TaskTrackingApp.DataAccess.Interfaces;
 using Select.TaskTrackingApp.DataAccess.Repositories;
 using Select.TaskTrackingApp.Dtos;
 using Select.TaskTrackingApp.Dtos.AppRoleDtos;
+using Select.TaskTrackingApp.Dtos.DegreeDtos;
 using Select.TaskTrackingApp.Dtos.PriortryDtos;
 using Select.TaskTrackingApp.Entities;
 using System;
@@ -43,10 +44,10 @@ namespace Select.TaskTrackingApp.Bussines.Services
 
         public async Task<IResponse<List<AppUserListDto>>> GetIncluded()
         {
-            var data = await _uow.GetRepository<AppUser>().GetQueryable().Include(x => x.AppUserRoles).ToListAsync();
+            var data = await _uow.GetRepository<AppUser>().GetQueryable().Include(x => x.AppUserRoles).Include(x=>x.Degree).ToListAsync();
             return new Response<List<AppUserListDto>>(ResponseType.Success,_mapper.Map<List<AppUserListDto>>(data));
         }
-
+        
         public Task<IResponse<AppUserListDto>> GetIncluded(int id)
         {
             throw new NotImplementedException();
@@ -61,6 +62,10 @@ namespace Select.TaskTrackingApp.Bussines.Services
             var mappedData = _mapper.Map<List<AppRoleListDto>>(roles);
             return new Response<List<AppRoleListDto>>(ResponseType.Success, mappedData);
         }
-
+        public async Task<IResponse<List<DegreeListDto>>> GetDegrees()
+        {
+            var data = await _uow.GetRepository<Degree>().GetAllAsync();
+            return new Response<List<DegreeListDto>>(ResponseType.Success, _mapper.Map<List<DegreeListDto>>(data));
+        }
     }
 }

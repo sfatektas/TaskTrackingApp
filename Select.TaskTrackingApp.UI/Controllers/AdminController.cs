@@ -21,13 +21,15 @@ namespace Select.TaskTrackingApp.UI.Controllers
         readonly IAppUserService _appUserService;
         readonly IAppUserTaskService _appUserTaskService;
         readonly IAppTaskService _appTaskService;
+        readonly IAppUserRoleService _appUserRoleService;
         readonly IMapper _mapper; // for model to dto 
-        public AdminController(IAppUserService appUserService, IAppUserTaskService appUserTaskService, IAppTaskService appTaskService, IMapper mapper)
+        public AdminController(IAppUserService appUserService, IAppUserTaskService appUserTaskService, IAppTaskService appTaskService, IMapper mapper, IAppUserRoleService appUserRoleService)
         {
             _appUserService = appUserService;
             _appUserTaskService = appUserTaskService;
             _appTaskService = appTaskService;
             _mapper = mapper;
+            _appUserRoleService = appUserRoleService;
         }
         [HttpGet]
         public async Task<IActionResult> UserManagment()
@@ -35,10 +37,39 @@ namespace Select.TaskTrackingApp.UI.Controllers
             var response = await _appUserService.GetIncluded();
             if (response.ResponseType == ResponseType.Success)
             {
-                return View(response.Data.Where(x => x.AppUserRoles.All(x => x.AppRoleId == (int)RoleType.User)).ToList());
+                return View(response.Data.Where(x => x.AppUserRoles.All(x => x.AppRoleId == (int)RoleType.User)&& x.IsActive ==true).ToList());
             }
             ViewBag.Message = "İlgili Data Bulunamadı.";
             return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> CreateUser()
+        {
+            var responseDegrees = await _appUserService.GetDegrees();
+            if (responseDegrees.ResponseType == ResponseType.Success)
+            {
+                var model = new AppUserCreateModel();
+                model.DegreeSelectList = new SelectList(responseDegrees.Data, "Id", "Defination");
+                return View(model);
+            }
+            ViewBag.Message = responseDegrees.Message;
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateUser(AppUserCreateModel model)
+        {
+            model.Password = model.FirstName;// default olarak kullanıcı adı şifre olarak atanıyor kullanıcı daha sonradan değiştirilebilir.
+
+            var response = await _appUserService.CreateAsync(_mapper.Map<AppUserCreateDto>(model));
+            if (response.ResponseType == ResponseType.Success)
+            {
+                var userResponse = await _appUserService.GetByFilterUser(x => x.Username == model.Username);
+                if (userResponse.ResponseType == ResponseType.Success)
+                    await _appUserRoleService.CreateAsync(new() { AppRoleId = (int)RoleType.User ,AppUserId = userResponse.Data.Id });
+            }
+            else
+                ViewBag.Message = response.Message;
+            return RedirectToAction("UserManagment");
         }
         [HttpGet]
         [Route("Admin/AddTask")]
@@ -106,6 +137,20 @@ namespace Select.TaskTrackingApp.UI.Controllers
             return View();
 
         }
+        [HttpGet]
+        [Route("Admin/RemoveUser/{id}")]
+        public async Task<IActionResult> RemoveUser(int id)
+        {
+            var response = await _appUserService.GetByIdAsync(id);
+            if (response.ResponseType == ResponseType.Success)
+            {
+                response.Data.IsActive = false;
+                var userResponse = await _appUserService.UpdateAsync(_mapper.Map<AppUserUpdateDto>(response.Data));
+            }
+            else
+                ViewBag.Message = "Something went wrong :(";
+            return RedirectToAction("UserManagment");
+        }
         [HttpPost]
         public async Task<IActionResult> Update(AppTaskUpdateModel model)
         {
@@ -127,7 +172,7 @@ namespace Select.TaskTrackingApp.UI.Controllers
             var response = await _appUserTaskService.GetIncluded();
             if (response.ResponseType == ResponseType.Success)
             {
-                return View(response.Data);
+                return View(response.Data.OrderBy(x=>x.TaskStatusId).OrderByDescending(x=>x.AppTask.CreatedTime).ToList());
             }
             return View();
         }

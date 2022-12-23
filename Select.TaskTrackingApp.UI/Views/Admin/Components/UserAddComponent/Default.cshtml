@@ -1,38 +1,31 @@
-﻿@model UserCreateModel
-@{
-    Layout = "_Layout";
-}
+﻿@model AppUserCreateModel
 
 <h4 class="text-center">Kullanıcı Ekle</h4>
 <div class="container">
-    <form method="post" class="mt-2">
+    <form asp-controller="Admin" asp-action="CreateUser" method="post" class="mt-2">
         <!-- Email input -->
         <div class="form-outline mb-4">
-            <input type="text" class="form-control" />
+            <input asp-for="@Model.FirstName" type="text" class="form-control" />
             <label class="form-label">Çalışan Adı</label>
         </div>
 
         <div class="form-outline mb-4">
-            <input type="text" class="form-control" />
+            <input asp-for="@Model.LastName" type="text" class="form-control" />
             <label class="form-label">Çalışan Soyadı</label>
         </div>
 
         <div class="form-outline mb-4">
-            <input type="text" class="form-control" />
+            <input asp-for="@Model.Username" type="text" class="form-control" />
             <label class="form-label">Çalışan Kullanıcı Adı</label>
         </div>
 
         <div class="form-outline mb-4">
-            <input type="text" class="form-control" />
+            <input asp-for="@Model.Email" type="text" class="form-control" />
             <label class="form-label">Çalışan Email</label>
         </div>
 
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option value="1">Juniour Frontend Developer</option>
-            <option value="1">Middle Frontend Developer</option>
-            <option value="1">Senior Frontend Developer</option>
-            <option value="1">.Net Backend Developer</option>
+        <select class="form-control" asp-for="@Model.DegreeId" asp-items="@Model.DegreeSelectList" class="form-select" aria-label="Default select example">
+
         </select>
         <!-- Submit button -->
         <button type="submit" class="btn btn-primary btn-block mb-4">Ekle</button>

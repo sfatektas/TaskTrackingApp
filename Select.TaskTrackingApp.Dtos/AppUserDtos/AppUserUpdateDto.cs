@@ -24,6 +24,8 @@ namespace Select.TaskTrackingApp.Dtos
 
         public string Password { get; set; }
 
+        public bool IsActive { get; set; }
+
         public List<AppUserRoleListDto> AppUserRoles { get; set; }
 
     }

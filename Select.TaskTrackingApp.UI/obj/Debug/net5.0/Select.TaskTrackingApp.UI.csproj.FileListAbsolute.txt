@@ -307,3 +307,4 @@ C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.UI\o
 C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.UI\obj\Debug\net5.0\Razor\Views\Admin\Components\TasksComponent\Default.cshtml.g.cs
 C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.UI\obj\Debug\net5.0\Razor\Views\User\Components\UserTasksComponent\Default.cshtml.g.cs
 C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.UI\obj\Debug\net5.0\Razor\Views\Admin\Update.cshtml.g.cs
+C:\Users\SEFA$$\Desktop\TaskTracking\TaskTrackingApp\Select.TaskTrackingApp.UI\obj\Debug\net5.0\Razor\Views\Admin\CreateUser.cshtml.g.cs

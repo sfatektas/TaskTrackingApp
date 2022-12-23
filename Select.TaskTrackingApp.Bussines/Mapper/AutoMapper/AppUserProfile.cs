@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Select.TaskTrackingApp.Dtos;
+using Select.TaskTrackingApp.Dtos.DegreeDtos;
 using Select.TaskTrackingApp.Entities;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace Select.TaskTrackingApp.Bussines.Mapper.AutoMapper.AppUserMapper
             CreateMap<AppUser, AppUserListDto>().ReverseMap();
             CreateMap<AppUser, AppUserCreateDto>().ReverseMap();
             CreateMap<AppUser, AppUserUpdateDto>().ReverseMap();
+            //Degreee
+            CreateMap<Degree, DegreeListDto>().ReverseMap();
         }
     }
 }

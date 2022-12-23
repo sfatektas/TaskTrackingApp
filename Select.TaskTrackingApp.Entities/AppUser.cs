@@ -19,6 +19,8 @@ namespace Select.TaskTrackingApp.Entities
 
         public string Password { get; set; }
 
+        public bool IsActive { get; set; }
+
         public List<AppUserRole> AppUserRoles { get; set; }
     }
 }

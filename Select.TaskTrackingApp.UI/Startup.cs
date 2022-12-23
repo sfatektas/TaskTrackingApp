@@ -47,6 +47,7 @@ namespace Select.TaskTrackingApp.UI
                 cfg.CreateMap<AppTaskCreateDto, AppTaskCreateModel>().ReverseMap();
                 cfg.CreateMap<AppTaskListDto, AppTaskUpdateModel>().ReverseMap();
                 cfg.CreateMap<AppTaskUpdateDto, AppTaskUpdateModel>().ReverseMap();
+                cfg.CreateMap<AppUserCreateDto, AppUserCreateModel>().ReverseMap();
             }
 );
             var mapper = config.CreateMapper();
